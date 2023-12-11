@@ -10,7 +10,7 @@ import { HomePageVideos } from "../types"
 const API_KEY = 'AIzaSyBok2oCIDrRXk3wNrwScUSRKTzTUgmj3LY'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const parseData = async (items: any[]) => {
+export const parseData = async (items: any[]): Promise<HomePageVideos[] | undefined> => {
   try {
     const videoIds: string[] = []
     const channelIds: string[] = []

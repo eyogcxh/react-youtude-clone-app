@@ -1,5 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
 import { InitialState } from "../types"
+import { getHomePageVideos } from "./reducers/getHomePageVideos"
 
 const initialState: InitialState = {
   videos: [],
@@ -15,8 +16,10 @@ const CloneTudeSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-      // builder.videos = action.payload.parsedData
-      // builder.nextPageToken = action.payload.nextPageToken
+    builder.addCase(getHomePageVideos.fulfilled, (state, action) => {
+      state.videos = action.payload.parsedData
+      state.nextPageToken = action.payload.nextPageToken
+    })
   },
 })
 
