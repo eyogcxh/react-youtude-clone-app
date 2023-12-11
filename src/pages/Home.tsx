@@ -1,20 +1,29 @@
 import { useEffect } from "react"
-import Navbar from "../components/Navbar"
-import Sidebar from "../components/Sidebar"
+
+import { HomePageVideos } from "../types"
+
+import { clearVideos } from "../store"
 import { useAppDispatch, useAppSelector } from "../store/hooks"
 import { getHomePageVideos } from "../store/reducers/getHomePageVideos"
+
+import Sidebar from "../components/Sidebar"
+import Navbar from "../components/Navbar"
 import InfiniteScroll from "react-infinite-scroll-component"
 import Spinner from "../components/Spinner"
 import Card from "../components/Card"
-import { HomePageVideos } from "../types"
 
 const Home = () => {
   const dispatch = useAppDispatch()
   const videos = useAppSelector((state) => state.clonetubeApp.videos)
 
   useEffect(() => {
+    return () => {
+      dispatch(clearVideos())
+    }
+  }, [dispatch])
+
+  useEffect(() => {
     dispatch(getHomePageVideos(false))
-    console.log(videos)
   }, [dispatch])
 
   return (

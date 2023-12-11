@@ -7,7 +7,7 @@ import {
 import { YOUTUBE_API_URL } from "./data"
 import { HomePageVideos } from "../types"
 
-const API_KEY = 'AIzaSyBok2oCIDrRXk3wNrwScUSRKTzTUgmj3LY'
+const API_KEY = 'AIzaSyA6WeBdDTcQ86pvxgLbDIZ9QIIgflGyIg4'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const parseData = async (items: any[]): Promise<HomePageVideos[] | undefined> => {
