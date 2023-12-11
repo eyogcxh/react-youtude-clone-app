@@ -2,7 +2,7 @@
 
 # YouTube-clone
 
-Welcome to the exciting world of "YouTube-clone"! This awesome project is currently rocking version 0.0.0 and is all set up as a module. We're using Vite for making things snappy during development and TypeScript to keep everything in check.
+Welcome to the exciting world of "YouTube-clone"! This awesome project is all set up as a module. We're using Vite for making things snappy during development and TypeScript to keep everything in check.
 
 ## Cool Scripts Inside:
 
